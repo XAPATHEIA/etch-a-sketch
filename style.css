@@ -42,3 +42,28 @@
     width: 30%;
     font-weight: bold;
 }
+
+/* Button choices CSS */
+
+.pen-choices {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 576px;
+}
+
+
+.colour-choice {
+    width: 30px;
+    height: 30px;
+}
+
+.colour-description {
+    margin: auto;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.choice-container {
+    display: flex;
+}
