@@ -26,6 +26,8 @@ function changeGridSizes(numberOfGrids) {
     });
 }
 
+// initalize slider display
+sliderDisplay(slider.value);
 
 // listens to the slider change and updates board size
 slider.addEventListener('input', function() {
@@ -33,8 +35,13 @@ slider.addEventListener('input', function() {
         gridContainer.removeChild(gridContainer.lastChild);
     }
     drawBoard(slider.value);
+    sliderDisplay(slider.value);
     changeGridSizes(slider.value);
 } 
 )
 
-
+// function to dynamically change slider value display
+function sliderDisplay(sliderValue) {
+    let sliderValueElement = document.getElementById("slider-value");
+    sliderValueElement.innerText = "Number of Grids: " + sliderValue;
+}

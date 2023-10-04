@@ -10,9 +10,9 @@
     justify-content: flex-start;
     align-content: flex-start;
     flex-wrap: wrap;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border: 2px solid black;
 }
-
 
 .gridElement {
     box-sizing: border-box;
@@ -26,37 +26,19 @@
 
 /* Slider CSS */
 
-.slidecontainer {
+.slidercontainer {
+    display: flex;
     margin: auto;
-    width: 400px; 
+    width: 576px; 
+    justify-content: space-between;
 }
 
 .slider {
-    width: 100%;
+    margin-left: 25px;
+    width: 70%;
 }
 
-
-/* Not needed
-.slider {
-    appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    transition: opacity .2s;
+#slider-value {
+    width: 30%;
+    font-weight: bold;
 }
-
-
-.slider::-webkit-slider-thumb {
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #04aa6d;
-    cursor: pointer;
-}
-
-
-
-*/
