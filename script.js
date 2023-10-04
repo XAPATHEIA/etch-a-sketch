@@ -45,3 +45,22 @@ function sliderDisplay(sliderValue) {
     let sliderValueElement = document.getElementById("slider-value");
     sliderValueElement.innerText = "Number of Grids: " + sliderValue;
 }
+
+/* TODO:
+    - Add event listener so that whenever a colouring choice is selected, the grid will
+    respond to that change, do it so that it has real-time changes, mid colouring
+    - Add function that will change grid background colours to either black, constantly changing
+    shades of black or random
+    - Create an event listener/function that clears grid colouring depending on whether the mouse leaves
+    the grid or if another colouring choice/board size is selected, idk which is better yet.
+*/
+
+const grids = document.querySelectorAll(".gridElement");
+function changeColour(selection) {
+    if (selection == '')
+}
+grids.forEach((grid) => {
+    grid.addEventListener('mouseover', changeColour() {
+
+    })
+})
