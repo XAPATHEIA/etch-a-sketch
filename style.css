@@ -16,6 +16,8 @@
 
 .gridElement {
     box-sizing: border-box;
+    width: 36px; 
+    height: 36px;
     border: 0px solid black;
     margin: 0px;
     padding: 0px;

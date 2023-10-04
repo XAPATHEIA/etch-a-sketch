@@ -4,7 +4,7 @@ let defaultNumberGrids = 16; // default size of the board
 let defaultBoardSize = 576;
 
 
-// function will draw the board depending on number of slider
+// function will draw the board depending on value of slider
 function drawBoard(numberOfGrids) {
     for(i = 0; i < Math.pow(numberOfGrids, 2); i++) {
         newDiv = document.createElement("div");
@@ -17,13 +17,12 @@ function drawBoard(numberOfGrids) {
 drawBoard(defaultNumberGrids);
 
 
+// selects all the grids, changes their dimensions to fit neatly within the board
 function changeGridSizes(numberOfGrids) {
     const grids = document.querySelectorAll(".gridElement");
     grids.forEach((grid) => {
         grid.style.width = Math.floor(defaultBoardSize / numberOfGrids) + "px";
         grid.style.height = Math.floor(defaultBoardSize / numberOfGrids) + "px";
-        console.log((defaultBoardSize / numberOfGrids) + "px");
-        console.log(slider.value)
     });
 }
 
