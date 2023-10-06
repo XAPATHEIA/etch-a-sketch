@@ -65,27 +65,32 @@ function sliderDisplay(sliderValue) {
     sliderValueElement.innerText = "Number of Grids: " + sliderValue;
 }
 
-/* TODO:
-    - Add event listener so that whenever a colouring choice is selected, the grid will
-    respond to that change, do it so that it has real-time changes, mid colouring
-    - Add function that will change grid background colours to either black, constantly changing
-    shades of black or random
-    - Create an event listener/function that clears grid colouring depending on whether the mouse leaves
-    the grid or if another colouring choice/board size is selected, idk which is better yet.
-*/
-
-
-
-
-
 function changeColour(element, selection) {
     if (selection == 'black') {
-        console.log("i'm hereaaa");
+        console.log("i'm here 1");
         element.style.background = selection;
     } else if (selection == 'grayscale') {
-        element.style.background = selection;
+        var currentRGB = getComputedStyle(element).backgroundColor;
+        var rgbArray = currentRGB.match(/\d+/g);
+
+        if (rgbArray !== null && rgbArray.length === 3) {
+            // Parse the components as integers
+            var r = parseInt(rgbArray[0]);
+            var g = parseInt(rgbArray[1]);
+            var b = parseInt(rgbArray[2]);
+
+            r = Math.max(0, r - 25); // Ensure it doesn't go below 0
+            g = Math.max(0, g - 25);
+            b = Math.max(0, b - 25);
+
+            element.style.background = `rgb(${r}, ${g}, ${b})`;
+        }
+
     } else if (selection == 'random') {
-        return null;
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        element.style.background = `rgb(${r}, ${g}, ${b})`;
     }
 }
 
@@ -106,7 +111,6 @@ choices.forEach((choice) => {
         redrawBoard();
         colourChoice = choice.value;
         console.log(colourChoice);
-        colourGrids();
     })
 })
 
